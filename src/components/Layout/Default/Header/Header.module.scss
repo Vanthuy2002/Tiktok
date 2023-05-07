@@ -3,4 +3,7 @@
 .wrapper {
   height: $headerHeight;
   box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
