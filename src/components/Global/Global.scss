@@ -1,7 +1,7 @@
-@import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 $primary: #fe2c55;
+$text: #333;
 $headerHeight: 60px;
 $Sidebar: 350px;
 
@@ -22,4 +22,13 @@ body {
 }
 a {
   text-decoration: none;
+  color: $text;
+}
+input,
+textarea,
+select,
+button {
+  outline: none;
+  border: none;
+  font-family: inherit;
 }

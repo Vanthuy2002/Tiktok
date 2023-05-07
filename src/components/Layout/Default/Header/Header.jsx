@@ -1,5 +1,7 @@
 import React from 'react';
-import { GoSearch } from 'react-icons/go';
+import { ImSearch } from 'react-icons/im';
+import { BiLoader } from 'react-icons/bi';
+import { FaTimesCircle } from 'react-icons/fa';
 import images from '/src/assets/img/imgs';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
@@ -18,18 +20,26 @@ const Header = () => {
 
       <div className={cx('search')}>
         <input
-          type='search'
           name='search'
           id='search'
           placeholder='Search'
-          className={cx('search-input')}
           spellCheck='false'
         />
 
+        <button className={cx('clear')}>
+          <FaTimesCircle />
+        </button>
+
+        <span className={cx('loading')}>
+          <BiLoader />
+        </span>
+
         <button className={cx('search-btn')}>
-          <GoSearch />
+          <ImSearch />
         </button>
       </div>
+
+      <div className={cx('action')}></div>
     </header>
   );
 };

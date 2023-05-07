@@ -1,9 +1,79 @@
 @import '../../../Global/Global.scss';
 
+$borderRadius: 92px;
+$heightSearch: 46px;
+$topSpacer: 9px;
+$btnWidth: 52px;
+
 .wrapper {
   height: $headerHeight;
   box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 361px;
+  height: $heightSearch;
+  background-color: #1618230f;
+  padding-left: 16px;
+  border-radius: $borderRadius;
+  border: 1px solid transparent;
+
+  input {
+    flex: 1;
+    height: 100%;
+    background-color: transparent;
+    font-size: 1.6rem;
+  }
+  input:not(:placeholder-shown) ~ .search-btn {
+    color: #161823;
+  }
+
+  &:focus-within {
+    border: 1px solid rgba($color: #161823, $alpha: 0.4);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: $btnWidth;
+    top: $topSpacer;
+    height: calc($heightSearch - $topSpacer * 2);
+    width: 2px;
+    background-color: rgba($color: #161823, $alpha: 0.4);
+  }
+}
+
+.clear,
+.loading {
+  position: absolute;
+  font-size: 2rem;
+  right: calc($btnWidth + 16px);
+  top: 50%;
+  transform: translateY(-40%);
+}
+
+.clear {
+  color: #998f8f;
+}
+
+.search-btn {
+  width: $btnWidth;
+  height: 100%;
+  border-top-right-radius: $borderRadius;
+  border-bottom-right-radius: $borderRadius;
+  cursor: pointer;
+  font-size: 2rem;
+  color: rgba($color: #161823, $alpha: 0.4);
+  text-align: center;
+  line-height: 100%;
+
+  &:hover {
+    background-color: rgba($color: #161823, $alpha: 0.05);
+  }
 }
