@@ -4,6 +4,7 @@ $borderRadius: 92px;
 $heightSearch: 46px;
 $topSpacer: 9px;
 $btnWidth: 52px;
+$search: 361px;
 
 .wrapper {
   height: $headerHeight;
@@ -13,11 +14,15 @@ $btnWidth: 52px;
   justify-content: space-between;
 }
 
+.search-results {
+  width: calc($search - 20px);
+}
+
 .search {
+  width: 361px;
   display: flex;
   align-items: center;
   position: relative;
-  width: 361px;
   height: $heightSearch;
   background-color: #1618230f;
   padding-left: 16px;
