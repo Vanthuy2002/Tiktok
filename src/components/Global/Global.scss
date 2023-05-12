@@ -21,6 +21,7 @@ body {
   text-rendering: optimizeSpeed;
 }
 a {
+  display: inline-block;
   text-decoration: none;
   color: $text;
 }

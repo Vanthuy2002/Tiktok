@@ -14,6 +14,10 @@ $search: 361px;
   justify-content: space-between;
 }
 
+.logo {
+  margin-left: 16px;
+}
+
 .search-results {
   width: calc($search - 20px);
 }
@@ -87,4 +91,11 @@ $search: 361px;
   font-size: 1.4rem;
   color: rgba($color: #161823, $alpha: 0.5);
   padding: 5px 12px;
+}
+
+.action {
+  margin-right: 16px;
+  display: flex;
+  gap: 0 12px;
+  align-items: center;
 }

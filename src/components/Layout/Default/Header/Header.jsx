@@ -12,6 +12,7 @@ import styles from './Header.module.scss';
 
 import WrapperOfPopper from '/src/components/Popper/Poper';
 import AccountItem from '/src/components/Accounts/Account.jsx';
+import Button from '../../../Button/Button';
 
 const cx = classNames.bind(styles);
 
@@ -69,7 +70,10 @@ const Header = () => {
         </div>
       </Tippy>
 
-      <div className={cx('action')}></div>
+      <div className={cx('action')}>
+        <Button text>Upload</Button>
+        <Button primary>Login</Button>
+      </div>
     </header>
   );
 };

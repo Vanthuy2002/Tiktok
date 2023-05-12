@@ -1,0 +1,55 @@
+@import '../Global/Global.scss';
+
+.wrapper {
+  min-width: 100px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid transparent;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.primary {
+  background-color: $primary;
+  color: #fff;
+}
+.outline {
+  border-color: $primary;
+  background-color: transparent;
+}
+.small {
+  min-width: 88px;
+  padding: 4px 16px;
+}
+.large {
+  min-width: 140px;
+  padding: 14px 16px;
+}
+.text {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.disable {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.rounded {
+  border-radius: 999px;
+  border-color: rgba($color: #161823, $alpha: 0.12);
+}
+
+.wrapper-icon {
+  display: inline-flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+}
