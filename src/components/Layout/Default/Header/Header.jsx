@@ -20,8 +20,8 @@ const Header = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      setResults([1, 3, 4]);
-    }, 3000);
+      setResults([]);
+    }, 0);
   }, []);
 
   return (

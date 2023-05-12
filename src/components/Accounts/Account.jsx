@@ -10,8 +10,7 @@ const AccountItem = () => {
     <section className={cx('wrapper')}>
       <img
         loading='lazy'
-        src='https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/df5dc2a101e88db418c2f6ff42445552~c5_100x100.jpeg?x-expires=1683648000&x-signature=M7m2x1oiq%2FMMLyAWXOszrRwFk94%3D'
-        alt='thuy'
+        src='https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200'
         className={cx('avatar')}
       />
       <div className={cx('info')}>
