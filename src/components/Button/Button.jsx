@@ -2,7 +2,6 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 import { Link } from 'react-router-dom';
-import { IoMdAdd } from 'react-icons/io';
 
 const cx = classNames.bind(styles);
 
@@ -20,6 +19,7 @@ const Button = ({
   onClick,
   children,
   passProps,
+  icon,
 }) => {
   let Comp = 'button';
   let _props = { onClick, ...passProps };
@@ -49,7 +49,7 @@ const Button = ({
       })}
       {..._props}
     >
-      {text && <span className={cx('wrapper-icon')}>{<IoMdAdd />}</span>}
+      {text && <span className={cx('wrapper-icon')}>{icon}</span>}
       <span>{children}</span>
     </Comp>
   );

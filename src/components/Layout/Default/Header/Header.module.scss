@@ -87,15 +87,18 @@ $search: 361px;
   }
 }
 
-.search-label {
-  font-size: 1.4rem;
-  color: rgba($color: #161823, $alpha: 0.5);
-  padding: 5px 12px;
+.action {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+  gap: 0 12px;
 }
 
-.action {
-  margin-right: 16px;
+.more {
   display: flex;
-  gap: 0 12px;
   align-items: center;
+  font-size: 1.8rem;
+  margin-left: 20px;
+  background-color: transparent;
+  padding: 8px;
 }

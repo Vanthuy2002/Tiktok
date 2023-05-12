@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Tippy from '@tippyjs/react/headless';
 
 import { Link } from 'react-router-dom';
+import { IoMdAdd } from 'react-icons/io';
 import { ImSearch } from 'react-icons/im';
 import { BiLoader } from 'react-icons/bi';
 import { FaTimesCircle } from 'react-icons/fa';
+import { FiMoreVertical } from 'react-icons/fi';
+import { MdKeyboardAlt, MdQuestionAnswer, MdGTranslate } from 'react-icons/md';
 
 import images from '/src/assets/img/imgs';
 import classNames from 'classnames/bind';
@@ -13,8 +16,19 @@ import styles from './Header.module.scss';
 import WrapperOfPopper from '/src/components/Popper/Poper';
 import AccountItem from '/src/components/Accounts/Account.jsx';
 import Button from '../../../Button/Button';
+import Menu from '/src/components/Popper/Menu/Menu';
 
 const cx = classNames.bind(styles);
+const MENU_ITEMS = [
+  { id: 1, icon: <MdGTranslate />, title: 'English' },
+  { id: 2, icon: <MdKeyboardAlt />, title: 'Keyboard Shortcuts' },
+  {
+    id: 3,
+    icon: <MdQuestionAnswer />,
+    title: 'Feedback and Help',
+    to: '/feedback',
+  },
+];
 
 const Header = () => {
   const [results, setResults] = useState([]);
@@ -71,8 +85,16 @@ const Header = () => {
       </Tippy>
 
       <div className={cx('action')}>
-        <Button text>Upload</Button>
+        <Button text icon={<IoMdAdd />}>
+          Upload
+        </Button>
         <Button primary>Login</Button>
+
+        <Menu items={MENU_ITEMS}>
+          <button className={cx('more')}>
+            <FiMoreVertical />
+          </button>
+        </Menu>
       </div>
     </header>
   );
