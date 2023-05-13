@@ -13,7 +13,7 @@
   background-color: transparent;
   font-size: 1.4rem;
 
-  &:nth-child(3) {
+  &:first-of-type {
     color: #161823;
   }
 
@@ -24,4 +24,26 @@
 
 .custom-padding {
   padding-bottom: 8px;
+}
+
+.header {
+  position: relative;
+  height: 50px;
+  margin-top: -8px;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 100%;
+  background-color: transparent;
+  cursor: pointer;
+}
+.header-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

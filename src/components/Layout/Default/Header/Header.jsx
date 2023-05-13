@@ -20,7 +20,18 @@ import Menu from '/src/components/Popper/Menu/Menu';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
-  { id: 1, icon: <MdGTranslate />, title: 'English' },
+  {
+    id: 1,
+    icon: <MdGTranslate />,
+    title: 'English',
+    children: {
+      title: 'Language',
+      data: [
+        { code: 'vi', title: 'Vietnamese' },
+        { code: 'en', title: 'English' },
+      ],
+    },
+  },
   { id: 2, icon: <MdKeyboardAlt />, title: 'Keyboard Shortcuts' },
   {
     id: 3,
@@ -38,6 +49,10 @@ const Header = () => {
       setResults([]);
     }, 0);
   }, []);
+
+  const handleChange = (menuItem) => {
+    console.log(menuItem);
+  };
 
   return (
     <header className={cx('wrapper')}>
@@ -85,12 +100,12 @@ const Header = () => {
       </Tippy>
 
       <div className={cx('action')}>
-        <Button text icon={<IoMdAdd />}>
+        <Button to={'upload'} text icon={<IoMdAdd />}>
           Upload
         </Button>
         <Button primary>Login</Button>
 
-        <Menu items={MENU_ITEMS}>
+        <Menu items={MENU_ITEMS} onChange={handleChange}>
           <button className={cx('more')}>
             <FiMoreVertical />
           </button>

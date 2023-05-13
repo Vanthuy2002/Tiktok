@@ -23,7 +23,7 @@ body {
 a {
   display: inline-block;
   text-decoration: none;
-  color: $text;
+  color: #000;
 }
 input,
 textarea,
@@ -32,4 +32,22 @@ button {
   outline: none;
   border: none;
   font-family: inherit;
+}
+// not founnd
+.not-found {
+  position: relative;
+}
+.bg-img {
+  min-width: 100vw;
+  min-height: 100vh;
+  background: url(/public/404-notfound.jpg) center no-repeat;
+  background-size: cover;
+}
+.back-home {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translatex(-50%);
+  color: white;
+  background-color: #000;
 }
