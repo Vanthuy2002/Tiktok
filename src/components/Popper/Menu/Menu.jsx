@@ -15,11 +15,13 @@ const Menu = ({ children, items = [] }) => {
   return (
     <Tippy
       interactive={true}
-      visible
+      delay={[0, 500]}
       placement='bottom-end'
       render={(attrs) => (
         <section className={cx('more-items')} tabIndex='-1' {...attrs}>
-          <WrapperOfPopper>{renderItem()}</WrapperOfPopper>
+          <WrapperOfPopper className={cx('custom-padding')}>
+            {renderItem()}
+          </WrapperOfPopper>
         </section>
       )}
     >

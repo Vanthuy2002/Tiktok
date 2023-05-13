@@ -49,7 +49,7 @@ const Button = ({
       })}
       {..._props}
     >
-      {text && <span className={cx('wrapper-icon')}>{icon}</span>}
+      {icon && <span className={cx('wrapper-icon')}>{icon}</span>}
       <span>{children}</span>
     </Comp>
   );

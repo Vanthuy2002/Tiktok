@@ -7,3 +7,21 @@
   color: rgba($color: #161823, $alpha: 0.5);
   padding: 5px 12px;
 }
+
+.menu-items {
+  width: 100%;
+  background-color: transparent;
+  font-size: 1.4rem;
+
+  &:nth-child(3) {
+    color: #161823;
+  }
+
+  &:hover {
+    background-color: #f1eaea;
+  }
+}
+
+.custom-padding {
+  padding-bottom: 8px;
+}
