@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import Tippy from '@tippyjs/react/headless';
+import HeadlessTippy from '@tippyjs/react/headless';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 import { Link } from 'react-router-dom';
 import { IoMdAdd } from 'react-icons/io';
 import { ImSearch } from 'react-icons/im';
-import { BiLoader } from 'react-icons/bi';
-import { FaTimesCircle } from 'react-icons/fa';
-import { FiMoreVertical } from 'react-icons/fi';
-import { MdKeyboardAlt, MdQuestionAnswer, MdGTranslate } from 'react-icons/md';
+import { BiLoader, BiMessageCheck } from 'react-icons/bi';
+import { FaTimesCircle, FaUserCircle, FaBitcoin } from 'react-icons/fa';
+import { FiMoreVertical, FiSettings } from 'react-icons/fi';
+import {
+  MdKeyboardAlt,
+  MdQuestionAnswer,
+  MdGTranslate,
+  MdOutlineDriveFolderUpload,
+  MdOutlineLogout,
+} from 'react-icons/md';
 
 import images from '/src/assets/img/imgs';
 import classNames from 'classnames/bind';
@@ -37,12 +45,41 @@ const MENU_ITEMS = [
     id: 3,
     icon: <MdQuestionAnswer />,
     title: 'Feedback and Help',
-    to: '/feedback',
+    to: 'feedback',
+  },
+];
+
+const userMenu = [
+  {
+    id: 4,
+    icon: <FaUserCircle />,
+    title: 'View Profile',
+    to: 'profile',
+  },
+  {
+    id: 5,
+    icon: <FaBitcoin />,
+    title: 'Get Coins',
+    to: 'coins',
+  },
+  {
+    id: 6,
+    icon: <FiSettings />,
+    title: 'Setting',
+    to: 'setting',
+  },
+  ...MENU_ITEMS,
+  {
+    id: 7,
+    icon: <MdOutlineLogout />,
+    title: 'Logout',
+    separate: true,
   },
 ];
 
 const Header = () => {
   const [results, setResults] = useState([]);
+  const currentUser = true;
 
   useEffect(() => {
     setTimeout(() => {
@@ -62,7 +99,7 @@ const Header = () => {
         </Link>
       </div>
 
-      <Tippy
+      <HeadlessTippy
         interactive={true}
         visible={results.length > 0}
         render={(attrs) => (
@@ -97,20 +134,49 @@ const Header = () => {
             <ImSearch />
           </button>
         </div>
-      </Tippy>
+      </HeadlessTippy>
 
-      <div className={cx('action')}>
-        <Button to={'upload'} text icon={<IoMdAdd />}>
-          Upload
-        </Button>
-        <Button primary>Login</Button>
+      <section className={cx('action')}>
+        {currentUser ? (
+          <section className={cx('current-user')}>
+            <Tippy content='Upload'>
+              <button className={cx('user-action')}>
+                <MdOutlineDriveFolderUpload />
+              </button>
+            </Tippy>
 
-        <Menu items={MENU_ITEMS} onChange={handleChange}>
-          <button className={cx('more')}>
-            <FiMoreVertical />
-          </button>
+            <Tippy content='Message'>
+              <button className={cx('user-action')}>
+                <BiMessageCheck />
+              </button>
+            </Tippy>
+          </section>
+        ) : (
+          <React.Fragment>
+            <Button to={'upload'} text icon={<IoMdAdd />}>
+              Upload
+            </Button>
+            <Button primary>Login</Button>
+          </React.Fragment>
+        )}
+
+        <Menu
+          items={currentUser ? userMenu : MENU_ITEMS}
+          onChange={handleChange}
+        >
+          {currentUser ? (
+            <img
+              src='https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&crop=faces&fit=crop&h=200&w=200'
+              alt=''
+              className={cx('user-avatar')}
+            />
+          ) : (
+            <button className={cx('more')}>
+              <FiMoreVertical />
+            </button>
+          )}
         </Menu>
-      </div>
+      </section>
     </header>
   );
 };

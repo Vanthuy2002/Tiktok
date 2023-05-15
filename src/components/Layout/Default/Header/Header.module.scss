@@ -93,6 +93,25 @@ $search: 361px;
   margin-right: 16px;
   gap: 0 12px;
 }
+.current-user {
+  display: flex;
+}
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.user-action {
+  display: grid;
+  place-items: center;
+  font-size: 2.2rem;
+  padding: 4px 16px;
+  color: #161823;
+  background-color: transparent;
+  cursor: pointer;
+}
 
 .more {
   display: flex;

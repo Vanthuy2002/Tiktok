@@ -11,7 +11,9 @@ const MenuItem = ({ data, cliked }) => {
       text
       icon={data.icon}
       to={data.to}
-      className={cx('menu-items')}
+      className={cx('menu-items', {
+        separate: data.separate,
+      })}
       onClick={cliked}
     >
       {data.title}
